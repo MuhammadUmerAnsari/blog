@@ -1,10 +1,8 @@
 @extends('layouts.app')
-
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Books') }} <a href="{{ url('/books/create') }}" class="btn btn-xs btn-info pull-right float-right">Create Book</a></div>
                 <div class="card-body">

@@ -71,6 +71,7 @@ class ContactsController extends Controller
     public function store(Request $request)
     {
         try {
+
             //$this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
             $param['name'] =  $request->get('name');
             $param['description'] =  $request->get('book_description');

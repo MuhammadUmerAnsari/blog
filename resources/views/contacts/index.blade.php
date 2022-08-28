@@ -2,7 +2,6 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h2 style="margin-top: 12px;" class="alert alert-success">Laravel 5.8 Ajax CRUD Application - DevOpsSchool.com </h2><br>
     <div class="row">
         <a href="javascript:void(0)" class="btn btn-success mb-2" id="create-new-post">Add post</a>
         <table class="table table-striped table-bordered">
@@ -86,7 +85,7 @@
             $('#postCrudModal').html("Add New post");
             $('#ajax-crud-modal').modal('show');
         });
-
+        //$('#edit-post').click(function () {
         $('body').on('click', '#edit-post', function () {
             var book_id = $(this).data('id');
             $.get('ajax-contacts/'+book_id+'/edit', function (data) {
@@ -128,6 +127,7 @@
                     type: "POST",
                     dataType: 'json',
                     success: function (data) {
+                        console.log(data);
                         var post = '<tr id="book_id_' + data.id + '"><td>' + data.id + '</td><td>' + data.name + '</td><td>' + data.description + '</td>';
                         //var post = '<tr id="book_id_' + data.id + '"><td>' + data.id + '</td><td>' + data.name + '</td><td>' + data.description +'</td>';
                         post += '<td><a href="javascript:void(0)" id="edit-post" data-id="' + data.id + '" class="btn btn-info">Edit</a> ';
